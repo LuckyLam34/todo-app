@@ -5,5 +5,6 @@ A very simple boilerplate for AngularJS app including gulp tasks
 
 ```
 $npm install
-$npm gulp build
+$gulp build
+$gulp
 ```

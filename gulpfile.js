@@ -81,7 +81,7 @@ gulp.task('clean:dist', function() {
 });
 
 //run sequence
-gulp.task('build', ['framework', 'script'], function(callback) {
+gulp.task('build', ['framework', 'script', 'template'], function(callback) {
   runSequence('clean:dist', 
     ['sass', 'useref', 'images', 'fonts'],
     callback
@@ -90,7 +90,7 @@ gulp.task('build', ['framework', 'script'], function(callback) {
 
 //default sequence tasks (only type "gulp")
 gulp.task('default', function(callback) {
-  runSequence(['sass', 'lint', 'watch'], callback);
+  runSequence(['sass', 'lint', 'browserSync', 'watch'], callback);
 });
 
 gulp.task('lint', function() {
