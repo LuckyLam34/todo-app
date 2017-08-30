@@ -41,7 +41,7 @@
       <ul class="list-group">
         <li ng-repeat="item in vm.data" class="list-group-item">
           <div class="checkbox">
-            <label><input type="checkbox" ng-model="item.checked">{{item.name}} {{item.checked}} </label> 
+            <label><input type="checkbox" ng-model="item.checked">{{item.name}}</label> 
             <span class="glyphicon glyphicon-trash pull-right" ng-click="vm.removeItem(item.id)"></span>
           </div>
          
