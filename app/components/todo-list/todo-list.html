@@ -1,0 +1,86 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+        aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+      <a class="navbar-brand" href="#">To-do List</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <form class="navbar-form navbar-right">
+        <div class="form-group">
+          <input type="text" placeholder="Email" class="form-control">
+        </div>
+        <div class="form-group">
+          <input type="password" placeholder="Password" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-success">Sign in</button>
+      </form>
+    </div>
+    <!--/.navbar-collapse -->
+  </div>
+</nav>
+
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+  <div class="container">
+    <h1>Our To Do</h1>
+
+
+  </div>
+</div>
+
+<div class="container">
+  <!-- Example row of columns -->
+  <div class="row">
+    <div class="col-md-8">
+      <ul class="list-group">
+        <li ng-repeat="item in vm.data" class="list-group-item">
+          <div class="checkbox">
+            <label><input type="checkbox" ng-model="item.checked">{{item.name}} {{item.checked}} </label> 
+            <span class="glyphicon glyphicon-trash pull-right" ng-click="vm.removeItem(item.id)"></span>
+          </div>
+         
+        </li>
+      </ul>
+
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Add Item</button>
+      <button type="button" ng-click="vm.removeSelectedItems()" class="btn btn-primary btn-lg">Delete selected items</button>
+      <!-- Modal -->
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">Add new item</h4>
+            </div>
+            <div class="modal-body">
+              <div class="form-group">
+                
+                <input type="text" class="form-control" ng-model="data" placeholder="New item">
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="button" ng-click="vm.addItem(data)" class="btn btn-primary">Save</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+    </div>
+  </div>
+
+  <hr>
+
+  <footer>
+    <p>&copy; 2017 Todo List Company, Inc.</p>
+  </footer>
+</div>
+<!-- /container -->
